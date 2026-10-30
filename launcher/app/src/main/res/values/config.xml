@@ -222,6 +222,19 @@
          straight back here. A theme's config.json can set it too. Leave empty to omit. -->
     <string name="stock_home_redirect" translatable="false"></string>
 
+    <!-- Where stock_home_redirect, home_long_press_home and the ALL_APPS key send the TV, in place of this
+         launcher: another installed app's package (its own leanback, or phone, entry), or "package/.Activity"
+         ("package/package.Activity" also works) for one specific activity. The package or activity named must
+         be that app's own Home activity (it has to answer a MAIN+HOME query itself); an app's other activities
+         are rejected even if otherwise launchable. Checked fresh every time, so an app that is missing,
+         pm-disabled or not Home-shaped falls back to this launcher instead of leaving Home on a black screen,
+         and a target that does not stay in the foreground falls back the same way after a few rapid attempts.
+         This launcher stays installed and Home either way: HomeKeyService's accessibility binding, and the
+         watch for stock_home_redirect's launcher, both live in this app, so it is never itself the redirect
+         target. Leave empty to open this launcher as before (HOME_KEY_SERVICE=1; a theme's config.json can set
+         it too). -->
+    <string name="home_redirect_component" translatable="false"></string>
+
     <!-- For TVs whose firmware opens the Live TV app (live_tv_package) by itself at every power-on, with no setting
          to change it (Changhong / Homwee boards start com.mediatek.wwtv.tvcenter from its own boot receiver, which
          adb cannot disable on Android 14). While nobody has pressed a key yet after boot or after the screen turns

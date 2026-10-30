@@ -464,5 +464,7 @@ Notes for models that have no tested list yet live in [`docs/devices/`](../docs/
 - [NetTV SEI700NTV](../docs/devices/nettv-sei700ntv.md) (SEI Robotics `SEI700NTV`, Nepal, Android 14 `UKG3.250826.001.8426`, stock `np.com.geniussystems.android.atv.launcher`): `pm disable*` is refused ("Warning! This command is illegal!"), so background telemetry is restricted via AppOps (`RUN_ANY_IN_BACKGROUND ignore`); Home handover verified via RoleManager and `HomeKeyService` with `stock_home_redirect`, reboot-tested and stable.
 - [Hisense VIDAA_TV / NOVA72691 (70V1F-S)](../docs/devices/hisense-70v1f-s-nova72691-android9.md), China, Android 9 `04.02.60.03` (Novatek NT72691, 32-bit): the stock 聚好看 launcher holds both HOME and boot — `set-home-activity`, the vendor startup pointer and an accessibility guard all fail on this firmware, and disabling the stock launcher component stops the boot animation from ever exiting.
 
+- [Philips 43PUD7407/77](../docs/devices/philips-43pud7407-77.md) (Argentina, `PH0M_EA_T32` / `PH0M_LT_T32`, Android TV 11, `TPM215L_R.105.000.097.000`): same build as the first `philips-50pud7406` unit; logger, App Gallery and GEL session observations, DAC kept, mixed preview metrics and optional HOME handover; no several-day validated list.
+
 To add your TV, see [CONTRIBUTING.md](../CONTRIBUTING.md). The quickest way to get a list is to
 run the prompt in [PROMPT.md](../PROMPT.md) and copy the packages your assistant disabled.
